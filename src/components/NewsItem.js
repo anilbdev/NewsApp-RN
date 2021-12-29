@@ -24,7 +24,7 @@ const NewsItem = ({news}) => {
                 </View>
                 <View style={styles.buttonContainer}>
                     <Button
-                        onPress={()=>navigation.navigate('DetailedNewsScreen',{name:'anil'})}
+                        onPress={()=>navigation.navigate('DetailedNewsScreen',{news:item})}
                         title='View'
                     />
                 </View>
