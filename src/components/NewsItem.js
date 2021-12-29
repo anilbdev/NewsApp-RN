@@ -1,6 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, View, FlatList, Image, Button } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
+//custom import
+import {
+    TimeNow
+} from '../index'
 
 const NewsItem = ({ news }) => {
     const navigation = useNavigation();
@@ -23,7 +27,7 @@ const NewsItem = ({ news }) => {
                     </View>
                     <View>
                         <Text style={{fontWeight:'bold'}}>{item.source.name} </Text>
-                        <Text style={{fontSize:10}}>{item.publishedAt} </Text>
+                        <TimeNow time={item.publishedAt}/>
                     </View>
                 </View>
                 <View style={styles.buttonContainer}>
