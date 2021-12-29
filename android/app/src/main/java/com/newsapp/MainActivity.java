@@ -1,6 +1,7 @@
 package com.newsapp;
 
 import com.facebook.react.ReactActivity;
+import android.os.Bundle;
 
 public class MainActivity extends ReactActivity {
 
@@ -12,4 +13,8 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "NewsApp";
   }
+  @Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
+}
 }

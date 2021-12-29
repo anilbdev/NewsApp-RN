@@ -1,0 +1,5 @@
+export {default as MainRoot} from './routes/MainRoot'
+export {default as Tab1} from './screens/Tab1'
+export {default as Tab2} from './screens/Tab2'
+export {default as Tab3} from './screens/Tab3'
+export {default as TabNavigation} from './routes/TabNavigation'

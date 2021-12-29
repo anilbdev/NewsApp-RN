@@ -5,48 +5,15 @@
  * @format
  * @flow strict-local
  */
-
 import React from 'react';
-
+//custom import
 import {
-  SafeAreaView,
-
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-
-
-
-const App= () => {
-  
-
+  MainRoot, Tab3
+} from './src/index'
+const App = () => {
   return (
-   <View>
-     <Text>Hello</Text>
-   </View>
+    <MainRoot />
   );
 };
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
