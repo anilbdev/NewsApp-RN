@@ -8,11 +8,12 @@
 import React from 'react';
 //custom import
 import {
-  MainRoot, Tab3
+  MainRoot, Tab3,NewsItem
 } from './src/index'
 const App = () => {
   return (
     <MainRoot />
+    // <NewsItem/>
   );
 };
 

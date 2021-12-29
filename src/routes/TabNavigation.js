@@ -4,7 +4,8 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import {
     Tab1,
     Tab2,
-    Tab3
+    Tab3,
+    NewsItem
 } from '../index'
 const Tab = createMaterialTopTabNavigator();
 
