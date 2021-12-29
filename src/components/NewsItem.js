@@ -1,7 +1,9 @@
 import React from 'react'
 import { StyleSheet, Text, View,FlatList,Image,Button } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 
 const NewsItem = ({news}) => {
+    const navigation = useNavigation();
 
      renderNewsItem = ({ item }) => {
         return (
@@ -22,6 +24,7 @@ const NewsItem = ({news}) => {
                 </View>
                 <View style={styles.buttonContainer}>
                     <Button
+                        onPress={()=>navigation.navigate('DetailedNewsScreen',{name:'anil'})}
                         title='View'
                     />
                 </View>

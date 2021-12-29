@@ -6,7 +6,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //custom import
 import {
-   TabNavigation
+   TabNavigation,
+   DetailedNewsScreen
 } from '../index'
 
 const Stack = createNativeStackNavigator()
@@ -29,6 +30,10 @@ const MainRoot = () => {
                 <Stack.Screen
                 name='HomeStack'
                 component={TabNavigation}                
+                />
+                <Stack.Screen
+                name='DetailedNewsScreen'
+                component={DetailedNewsScreen}
                 />
             </Stack.Navigator>
            
