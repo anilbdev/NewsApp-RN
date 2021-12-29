@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, Alert, View } from 'react-native'
+import { StyleSheet, Alert, View,ActivityIndicator,Text } from 'react-native'
 import {
     getArticles,
 } from '../service/news'
@@ -17,9 +17,16 @@ const Tab1 = () => {
             Alert.alert('Error', 'Something went wrong!!')
         })
     }, [])
+
+    let view = isLoading?(
+        <View style={styles.activityIndicator}>
+            <ActivityIndicator animating={isLoading} />
+            <Text style={{marginVertical:10}}>Please wait....</Text>
+        </View>
+    ):<NewsItem news={news} />
     return (
         <View style={{ flex: 1 }}>
-            <NewsItem news={news} />
+            {view}
         </View>
     )
 }
@@ -42,5 +49,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    activityIndicator:{
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center'
     }
 })
