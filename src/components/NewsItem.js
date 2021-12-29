@@ -1,11 +1,11 @@
 import React from 'react'
-import { StyleSheet, Text, View,FlatList,Image,Button } from 'react-native'
+import { StyleSheet, Text, View, FlatList, Image, Button } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 
-const NewsItem = ({news}) => {
+const NewsItem = ({ news }) => {
     const navigation = useNavigation();
 
-     renderNewsItem = ({ item }) => {
+    renderNewsItem = ({ item }) => {
         return (
             <View style={styles.container}>
                 <View style={styles.imageContainer}>
@@ -18,13 +18,17 @@ const NewsItem = ({news}) => {
                     <View style={{ height: 50 }}>
                         <Text style={{ fontWeight: 'bold' }}>{item.title}</Text>
                     </View>
-                    <View style={{ height: 100 }}>
+                    <View style={{ height: 60 }}>
                         <Text>{item.description}</Text>
+                    </View>
+                    <View>
+                        <Text style={{fontWeight:'bold'}}>{item.source.name} </Text>
+                        <Text style={{fontSize:10}}>{item.publishedAt} </Text>
                     </View>
                 </View>
                 <View style={styles.buttonContainer}>
                     <Button
-                        onPress={()=>navigation.navigate('DetailedNewsScreen',{news:item})}
+                        onPress={() => navigation.navigate('DetailedNewsScreen', { news: item })}
                         title='View'
                     />
                 </View>
@@ -33,13 +37,13 @@ const NewsItem = ({news}) => {
     }
     return (
         <View style={{ flex: 1 }}>
-        <FlatList
-            data={news}
-            renderItem={renderNewsItem}
-        />
-      
-    
-    </View>
+            <FlatList
+                data={news}
+                renderItem={renderNewsItem}
+            />
+
+
+        </View>
     )
 }
 
