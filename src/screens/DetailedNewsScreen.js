@@ -1,21 +1,41 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
 import { WebView } from 'react-native-webview';
+import Share from 'react-native-share'
 const DetailedNewsScreen = ({ route, navigation }) => {
     const { news } = route.params
-    console.log(news.urlToImage);
-    navigation.setOptions({
-        headerRight: () => (
-            <Button
-                onPress={() => alert('This is a button!')}
-                title="Share"
-                color="#000"
-            />
-        ),
-    })
+    const url = news.url
+    const title = news.title;
+    const message = "Please check this out.";
+    const options = {
+        title,
+        url,
+        message,
+    }
+    const share = async (customOptions = options) => {
+        try {
+          await Share.open(customOptions);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+    useEffect(() => {
+        navigation.setOptions({
+            headerRight: () => (
+                <Button
+                    onPress={async() => await share()}
+                    title="Share"
+                    color="#000"
+                />
+            ),
+        })
+    }, [])
+
     return (
         <View style={styles.container}>
             <WebView source={{ uri: news.url }} />
+
         </View>
     )
 }
