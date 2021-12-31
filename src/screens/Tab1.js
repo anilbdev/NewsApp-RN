@@ -10,7 +10,7 @@ const Tab1 = () => {
     const [news, setNews] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
-        getArticles().then(data => {
+        getArticles('general').then(data => {
             setNews(data)
             setIsLoading(false)
         }, error => {
