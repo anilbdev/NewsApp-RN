@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, Alert, View,ActivityIndicator,Text } from 'react-native'
+
 import {
     getArticles,
 } from '../service/news'
