@@ -1,17 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View ,Image} from 'react-native'
+import { WebView } from 'react-native-webview';
 
 const DetailedNewsScreen = ({route}) => {
     const {news} = route.params
     console.log(news.urlToImage);
     return (
-        <View>
-            <Image
-            source={{uri:news.urlToImage}}
-            style={styles.image}
-            />
-            <Text style={{fontWeight:'bold'}} > {news.title}</Text>
-            <Text> {news.content}</Text>
+        <View style={{width:'95%',height:'90%'}}>
+           
+            <WebView  source={{ uri:news.url}} />
         </View>
     )
 }

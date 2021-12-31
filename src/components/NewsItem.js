@@ -1,6 +1,7 @@
-import React from 'react'
-import { StyleSheet, Text, View, FlatList, Image, Button } from 'react-native'
+import React, { useState } from 'react'
+import { StyleSheet, Text, View, FlatList, Image, Button, Modal } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
+
 //custom import
 import {
     TimeNow
@@ -8,9 +9,11 @@ import {
 
 const NewsItem = ({ news }) => {
     const navigation = useNavigation();
+ 
 
     renderNewsItem = ({ item }) => {
         return (
+
             <View style={styles.container}>
                 <View style={styles.imageContainer}>
                     <Image
@@ -26,28 +29,35 @@ const NewsItem = ({ news }) => {
                         <Text>{item.description}</Text>
                     </View>
                     <View>
-                        <Text style={{fontWeight:'bold'}}>{item.source.name} </Text>
-                        <TimeNow time={item.publishedAt}/>
+                        <Text style={{ fontWeight: 'bold' }}>{item.source.name} </Text>
+                        <TimeNow time={item.publishedAt} />
                     </View>
                 </View>
                 <View style={styles.buttonContainer}>
                     <Button
-                        onPress={() => navigation.navigate('DetailedNewsScreen', { news: item })}
+                        onPress={() =>
+                            navigation.navigate('DetailedNewsScreen', { news: item })
+                            // setModalVisible(true)
+                        }
                         title='View'
                     />
                 </View>
+           
             </View>
+
         )
     }
     return (
-        <View style={{ flex: 1 }}>
-            <FlatList
-                data={news}
-                renderItem={renderNewsItem}
-            />
+     
+            <View style={{ flex: 1 }}>
+                <FlatList
+                    data={news}
+                    renderItem={renderNewsItem}
+                />
 
 
-        </View>
+            </View>
+ 
     )
 }
 
