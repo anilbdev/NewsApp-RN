@@ -6,7 +6,7 @@ const DetailedNewsScreen = ({route}) => {
     const {news} = route.params
     console.log(news.urlToImage);
     return (
-        <View style={{width:'95%',height:'90%'}}>
+        <View style={styles.container}>
            
             <WebView  source={{ uri:news.url}} />
         </View>
@@ -16,8 +16,8 @@ const DetailedNewsScreen = ({route}) => {
 export default DetailedNewsScreen
 
 const styles = StyleSheet.create({
-    image:{
-        width:'100%',
-        height:'50%'
-    }
+ container:{
+    width:'100%',
+    height:'100%'
+ }
 })
