@@ -6,10 +6,10 @@ const DetailedNewsScreen = ({route}) => {
     console.log(news.urlToImage);
     return (
         <View>
-            {/* <Image
+            <Image
             source={{uri:news.urlToImage}}
             style={styles.image}
-            /> */}
+            />
             <Text style={{fontWeight:'bold'}} > {news.title}</Text>
             <Text> {news.content}</Text>
         </View>
@@ -20,7 +20,7 @@ export default DetailedNewsScreen
 
 const styles = StyleSheet.create({
     image:{
-        width:'100',
-        height:'100'
+        width:'100%',
+        height:'50%'
     }
 })

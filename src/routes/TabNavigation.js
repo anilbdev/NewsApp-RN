@@ -15,21 +15,25 @@ const TabNavigation = () => {
              <Tab.Navigator
             screenOptions={{
                 
-                tabBarStyle: { backgroundColor: 'powderblue',
-           }
+                tabBarStyle: { backgroundColor: 'powderblue'},
+                tabBarActiveTintColor:'blue',
+                tabBarInactiveTintColor:'grey'
             }}
             >
                 <Tab.Screen
                 name='tab1'
                 component={Tab1}
+                options={{tabBarLabel:'General'}}
                 />
                  <Tab.Screen
                 name='tab2'
                 component={Tab2}
+                options={{tabBarLabel:'Business'}}
                 />
                  <Tab.Screen
                 name='tab3'
                 component={Tab3}
+                options={{tabBarLabel:'Technology'}}
                 />               
             </Tab.Navigator>
         
